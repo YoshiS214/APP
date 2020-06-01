@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="APP.MainPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <SearchBar Placeholder="Search" Grid.Column="0" x:Name="SearchBar1"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="http://openweathermap.org/img/wn/01d@2x.png" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" x:Name="WeatherIcon"/>
+            <Label Text="Temperature" Grid.Column="2" Grid.Row="0"/>
+            <Label Grid.Column="3" Grid.Row="0" x:Name="Temp"/>
+            <Label Text="Weather" Grid.Column="2" Grid.Row="1"/>
+            <Label Grid.Column="3" Grid.Row="1" x:Name="Weather"/>
+        </Grid>
+        <Grid Grid.Row="2" BackgroundColor="#5873AF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="TfL Information" Grid.Column="1" Grid.Row="0" Margin="0,0,0,0"/>
+            <Label Grid.Column="1" Grid.Row="2" x:Name="TfL" Margin="0,0,0,0"/>
+        </Grid>
+        <ScrollView BackgroundColor="DarkGray" Grid.Row="3">
+            <StackLayout Spacing="5">
+                <BoxView HeightRequest="100" BackgroundColor="#cccccc" />
+                <BoxView HeightRequest="100" BackgroundColor="#ffaaaa" />
+                <BoxView HeightRequest="100" BackgroundColor="#aaffaa" />
+                <BoxView HeightRequest="100" BackgroundColor="#aaaaff" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
