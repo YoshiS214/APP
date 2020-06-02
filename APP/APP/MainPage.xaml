@@ -34,13 +34,15 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
-            <Image Source="http://openweathermap.org/img/wn/01d@2x.png" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" x:Name="WeatherIcon"/>
-            <Label Text="Temperature" Grid.Column="2" Grid.Row="0"/>
-            <Label Grid.Column="3" Grid.Row="0" x:Name="Temp"/>
-            <Label Text="Weather" Grid.Column="2" Grid.Row="1"/>
-            <Label Grid.Column="3" Grid.Row="1" x:Name="Weather"/>
+            <Label Text="Country" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" x:Name="Town"/>
+            <Image Source="http://openweathermap.org/img/wn/01d@2x.png" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" x:Name="WeatherIcon"/>
+            <Label Text="Temperature" Grid.Column="2" Grid.Row="1"/>
+            <Label Grid.Column="3" Grid.Row="1" x:Name="Temp"/>
+            <Label Text="Weather" Grid.Column="2" Grid.Row="2"/>
+            <Label Grid.Column="3" Grid.Row="2" x:Name="Weather"/>
         </Grid>
         <Grid Grid.Row="2" BackgroundColor="#5873AF">
             <Grid.ColumnDefinitions>
@@ -56,11 +58,7 @@
             <Label Grid.Column="1" Grid.Row="2" x:Name="TfL" Margin="0,0,0,0"/>
         </Grid>
         <ScrollView BackgroundColor="DarkGray" Grid.Row="3">
-            <StackLayout Spacing="5">
-                <BoxView HeightRequest="100" BackgroundColor="#cccccc" />
-                <BoxView HeightRequest="100" BackgroundColor="#ffaaaa" />
-                <BoxView HeightRequest="100" BackgroundColor="#aaffaa" />
-                <BoxView HeightRequest="100" BackgroundColor="#aaaaff" />
+            <StackLayout Spacing="5" x:Name="NewsList">
             </StackLayout>
         </ScrollView>
     </Grid>

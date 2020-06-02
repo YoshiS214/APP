@@ -24,6 +24,34 @@ namespace APP
             double[] position = PositionAsync().Result;
             
             weather = new Weather(position[0], position[1]);
+
+            news = new News();
+
+            Reload();
+        }
+
+        public async void Reload()
+        {
+            while (true)
+            {
+                object[] w = weather.Get_Weather();
+                Town.Text = w[0].ToString();
+                Weather.Text = w[2].ToString();
+                Temp.Text = String.Format("{0}℃", w[3].ToString());
+
+                NewsList.Children.Clear();
+                List<List<string>> n = news.Get_News();
+                foreach (List<string> topic in n)
+                {
+                    NewsList.Children.Add(new Button { Text = topic[0] + "\n" + topic[1], BackgroundColor = Color.White, });
+                }
+                await Task.Delay(1000*60*10);
+            }
+        }
+
+        public async Task OpenBrowser(Uri uri)
+        {
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
 
         private async Task<double[]> PositionAsync()
